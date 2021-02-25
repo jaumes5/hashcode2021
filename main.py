@@ -1,7 +1,9 @@
 # hello 
 
 def main():
-    pass
+    intersections = {0: [], 1: []}
+    cars = {1: [], 2: []}
+    streets = {"rue_lo": (0,1)}
 
 
 if __name__ == '__main__':
