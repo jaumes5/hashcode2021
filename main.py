@@ -15,6 +15,7 @@ def solve(input_file_name):
 
 
 def create_streets(intersections, time, streets_dict):
+    max_time = min(10, time)
     res = str(len(intersections)) + "\n"
     for inter in intersections.items():
         res += inter[0] + "\n"
@@ -27,7 +28,9 @@ def create_streets(intersections, time, streets_dict):
                 str(num_streets)
                 + "\n"
                 + "\n".join(
-                    i + " " + str(num_streets - acc) for acc, i in enumerate(streets)
+                    i + " " + str(int(round(max_time - max_time * (acc / num_streets))))
+                    for acc, i in enumerate(streets)
+                    if round(max_time - max_time * (acc / num_streets)) != 0
                 )
                 + "\n"
             )
@@ -35,7 +38,11 @@ def create_streets(intersections, time, streets_dict):
 
 
 def sorted_streets(streets, streets_dict):
-    return sorted(streets, key=lambda s: streets_dict[s]["nb_use"] / streets_dict[s]["L"], reverse=True)
+    return sorted(
+        streets,
+        key=lambda s: streets_dict[s]["nb_use"] / streets_dict[s]["L"],
+        reverse=True,
+    )
 
 
 def main():
