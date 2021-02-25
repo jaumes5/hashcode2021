@@ -18,9 +18,9 @@ def parse_file(file_name):
         for line in lines[1:nb_streets+1]:
             words = line.split(' ')
             streets[words[2]] = {
-                'L': words[3],
-                'start': words[0],
-                'end': words[1],
+                'L': int(words[3]),
+                'start': int(words[0]),
+                'end': int(words[1]),
                 'name': words[2],
                 'nb_use': 0
             }
