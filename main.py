@@ -21,7 +21,7 @@ def create_streets(intersections, time):
         else:
             res += (str(len(inter[1])) +
                     "\n" +
-                    "\n".join(i + " " + str(time//2) for i in inter[1]) +
+                    "\n".join(i + " " + str(1) for i in inter[1]) +
                     "\n")
     return res
 
