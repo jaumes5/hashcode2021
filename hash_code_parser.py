@@ -15,11 +15,11 @@ def weights(intersection_in, streets):
             )
         return memo[inter_number]
     return {
-        i: {
-            name: streets[name]['nb_use'] / max(sum_intersection_use(names, i), 1)
+        int(i): {
+            name: streets[name]['nb_use'] / max(sum_intersection_use(names, int(i)), 1)
             for name in names
         }
-        for i, names in enumerate(intersection_in.values())
+        for i, names in intersection_in.items()
     }
 
 

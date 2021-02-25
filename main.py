@@ -2,6 +2,7 @@
 
 from hash_code_parser import *
 from pprint import pprint
+import math
 
 
 def solve(input_file_name, dry_run=False):
@@ -37,10 +38,9 @@ def create_streets(intersections, time, streets_dict, blacklist, weights, nb_car
             streets_time = [
                 i
                 + " "
-                + str(weights[int(inter[0])][i] * (time / nb_car))
+                + str(int(math.ceil(weights[int(inter[0])][i] * (time / nb_car))))
                 for acc, i in enumerate(streets)
-                if round(max_time - max_time * (acc / num_streets)) != 0
-                and i not in blacklist
+                if i not in blacklist
             ]
             if len(streets_time) > 0:
                 res += inter[0] + "\n"
