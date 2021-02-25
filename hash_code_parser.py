@@ -33,6 +33,7 @@ def parse_file(file_name):
             cars[i] = words[1:]
             for street_name in words[1:]:
                 streets[street_name]['nb_use'] += 1
+        black_list = {street['name'] for _, street in streets.items() if street['nb_use'] == 0}
         return {
             'duration': duration,
             'nb_intersections': nb_intersections,
@@ -43,4 +44,5 @@ def parse_file(file_name):
             'cars': cars,
             'intersections_in': intersections_in,
             'intersections_out': intersections_out,
+            'black_list': black_list
         }

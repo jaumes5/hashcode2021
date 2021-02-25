@@ -48,6 +48,7 @@ def main():
 
 def test_():
     solve("a.txt")
+    # pprint(parse_file('c.txt')['black_list'])
 
 
 if __name__ == "__main__":
