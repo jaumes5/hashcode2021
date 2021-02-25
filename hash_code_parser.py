@@ -11,6 +11,8 @@ def parse_file(file_name):
         nb_streets = int(first_line[2])
         nb_car = int(first_line[3])
         intersections = defaultdict(list)
+        intersections_in = defaultdict(list)
+        intersections_out = defaultdict(list)
         streets = {}
         cars = {}
         for line in lines[1:nb_streets+1]:
@@ -23,6 +25,8 @@ def parse_file(file_name):
             }
             intersections[words[0]].append(words[2])
             intersections[words[1]].append(words[2])
+            intersections_in[words[1]].append(words[2])
+            intersections_out[words[0]].append(words[2])
         for i, line in enumerate(lines[nb_streets+1:]):
             words = line.split(' ')
             cars[i] = words[1:]
@@ -34,4 +38,6 @@ def parse_file(file_name):
             'intersections': intersections,
             'streets': streets,
             'cars': cars,
+            'intersections_in': intersections_in,
+            'intersections_out': intersections_out,
         }
