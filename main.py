@@ -4,12 +4,15 @@ from hash_code_parser import *
 from pprint import pprint
 
 def main():
+    input_file_name = 'a.txt'
     intersections = {0: [], 1: []}
     cars = {1: [], 2: []}
     streets = {"rue_lo": (0,1)}
-    problem = parse_file('a.txt')
+    problem = parse_file(input_file_name)
     pprint(problem)
-    print(create_streets(problem["intersections_in"], int(problem["duration"])))
+    output = create_streets(problem["intersections_in"], int(problem["duration"]))
+    with open('output_' + input_file_name, 'w') as output_file:
+        output_file.write(output)
 
 
 def create_streets(intersections, time):
