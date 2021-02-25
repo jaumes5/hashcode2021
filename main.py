@@ -3,13 +3,10 @@
 from hash_code_parser import *
 from pprint import pprint
 
-def main():
-    input_file_name = 'a.txt'
-    intersections = {0: [], 1: []}
-    cars = {1: [], 2: []}
-    streets = {"rue_lo": (0,1)}
+
+def solve(input_file_name):
     problem = parse_file(input_file_name)
-    pprint(problem)
+    # pprint(problem)
     output = create_streets(problem["intersections_in"], int(problem["duration"]))
     with open('output_' + input_file_name, 'w') as output_file:
         output_file.write(output)
@@ -28,6 +25,17 @@ def create_streets(intersections, time):
                     "\n")
     return res
 
+
+def main():
+    for l in 'abcdef':
+        solve(l + '.txt')
+
+
+def test_():
+    solve('a.txt')
+
+
 if __name__ == '__main__':
     main()
+    # test_()
 
