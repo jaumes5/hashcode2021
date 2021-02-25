@@ -47,10 +47,10 @@ def main():
 
 
 def test_():
-    solve("a.txt")
-    # pprint(parse_file('c.txt')['black_list'])
+    # solve("a.txt")
+    pprint(parse_file('b.txt'))
 
 
 if __name__ == "__main__":
-    main()
-    # test_()
+    # main()
+    test_()

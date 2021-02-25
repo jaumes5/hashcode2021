@@ -1,5 +1,24 @@
-
 from collections import defaultdict
+
+
+def sum_nb_use(streets):
+    pass
+
+
+def weights(intersection_in, streets):
+
+    def sum_intersection_use(intersection):
+        intersection = set(intersection)
+        return sum(
+            street['nb_use'] for street in streets.values() if street['name'] in intersection
+        )
+    return {
+        i: {
+            name: streets[name]['nb_use'] / max(sum_intersection_use(names), 1)
+            for name in names
+        }
+        for i, names in enumerate(intersection_in.values())
+    }
 
 
 def parse_file(file_name):
@@ -15,7 +34,7 @@ def parse_file(file_name):
         intersections_out = defaultdict(list)
         streets = {}
         cars = {}
-        for line in lines[1:nb_streets+1]:
+        for line in lines[1:nb_streets + 1]:
             words = line.split(' ')
             streets[words[2]] = {
                 'L': int(words[3]),
@@ -28,7 +47,7 @@ def parse_file(file_name):
             intersections[words[1]].append(words[2])
             intersections_in[words[1]].append(words[2])
             intersections_out[words[0]].append(words[2])
-        for i, line in enumerate(lines[nb_streets+1:]):
+        for i, line in enumerate(lines[nb_streets + 1:]):
             words = line.split(' ')
             cars[i] = words[1:]
             for street_name in words[1:]:
@@ -44,5 +63,6 @@ def parse_file(file_name):
             'cars': cars,
             'intersections_in': intersections_in,
             'intersections_out': intersections_out,
-            'black_list': black_list
+            'black_list': black_list,
+            'weights': weights(intersections_in, streets)
         }
