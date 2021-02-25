@@ -4,7 +4,7 @@ from hash_code_parser import *
 from pprint import pprint
 
 
-def solve(input_file_name):
+def solve(input_file_name, dry_run=False):
     problem = parse_file(input_file_name)
     # pprint(problem)
     output = create_streets(
@@ -12,12 +12,17 @@ def solve(input_file_name):
         int(problem["duration"]),
         problem["streets"],
         problem["black_list"],
+        problem["weights"],
+        problem["nb_car"],
     )
-    with open("output_" + input_file_name, "w") as output_file:
-        output_file.write(output)
+    if not dry_run:
+        with open("output_" + input_file_name, "w") as output_file:
+            output_file.write(output)
+    else:
+        print(output)
 
 
-def create_streets(intersections, time, streets_dict, blacklist):
+def create_streets(intersections, time, streets_dict, blacklist, weights, nb_car):
     max_time = min(10, time)
     res = ""
     inter_count = 0
@@ -32,7 +37,7 @@ def create_streets(intersections, time, streets_dict, blacklist):
             streets_time = [
                 i
                 + " "
-                + str(1)
+                + str(weights[int(inter[0])][i] * (time / nb_car))
                 for acc, i in enumerate(streets)
                 if round(max_time - max_time * (acc / num_streets)) != 0
                 and i not in blacklist
@@ -60,8 +65,9 @@ def main():
 
 
 def test_():
-    solve("a.txt")
-    # pprint(parse_file('b.txt'))
+    # solve("a.txt")
+    # pprint(parse_file('b.txt')['weights'])
+    solve('b.txt', dry_run=True)
 
 
 if __name__ == "__main__":
