@@ -23,9 +23,9 @@ def parse_file(file_name):
             }
             intersections[words[0]].append(words[2])
             intersections[words[1]].append(words[2])
-        for line in lines[nb_streets+1:]:
+        for i, line in enumerate(lines[nb_streets+1:]):
             words = line.split(' ')
-            cars[words[0]] = words[1:]
+            cars[i] = words[1:]
         return {
             'duration': duration,
             'nb_intersections': nb_intersections,
