@@ -24,16 +24,12 @@ def create_streets(intersections, time, streets_dict):
         else:
             streets = sorted_streets(inter[1], streets_dict)
             num_streets = len(inter[1])
-            res += (
-                str(num_streets)
-                + "\n"
-                + "\n".join(
-                    i + " " + str(int(round(max_time - max_time * (acc / num_streets))))
-                    for acc, i in enumerate(streets)
-                    if round(max_time - max_time * (acc / num_streets)) != 0
-                )
-                + "\n"
-            )
+            streets_time = [
+                i + " " + str(int(round(max_time - max_time * (acc / num_streets))))
+                for acc, i in enumerate(streets)
+                if round(max_time - max_time * (acc / num_streets)) != 0
+            ]
+            res += str(len(streets_time)) + "\n" + "\n".join(streets_time) + "\n"
     return res
 
 
