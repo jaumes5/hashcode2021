@@ -55,14 +55,15 @@ def sorted_streets(streets, streets_dict):
 
 def main():
     for l in "abcdef":
+        print(l)
         solve(l + ".txt")
 
 
 def test_():
-    # solve("a.txt")
-    pprint(parse_file('b.txt'))
+    solve("a.txt")
+    # pprint(parse_file('b.txt'))
 
 
 if __name__ == "__main__":
-    # main()
-    test_()
+    main()
+    # test_()

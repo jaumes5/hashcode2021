@@ -6,15 +6,17 @@ def sum_nb_use(streets):
 
 
 def weights(intersection_in, streets):
-
-    def sum_intersection_use(intersection):
+    memo = {}
+    def sum_intersection_use(intersection, inter_number):
         intersection = set(intersection)
-        return sum(
-            street['nb_use'] for street in streets.values() if street['name'] in intersection
-        )
+        if inter_number not in memo:
+            memo[inter_number] = sum(
+                street['nb_use'] for street in streets.values() if street['name'] in intersection
+            )
+        return memo[inter_number]
     return {
         i: {
-            name: streets[name]['nb_use'] / max(sum_intersection_use(names), 1)
+            name: streets[name]['nb_use'] / max(sum_intersection_use(names, i), 1)
             for name in names
         }
         for i, names in enumerate(intersection_in.values())
