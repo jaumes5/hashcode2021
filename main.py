@@ -38,7 +38,7 @@ def create_streets(intersections, time, streets_dict, blacklist, weights, nb_car
             streets_time = [
                 i
                 + " "
-                + str(int(math.ceil(weights[int(inter[0])][i] * (time / nb_car))))
+                + str(int(math.ceil(weights[int(inter[0])][i])))
                 for acc, i in enumerate(streets)
                 if i not in blacklist
             ]
@@ -66,8 +66,8 @@ def main():
 
 def test_():
     # solve("a.txt")
-    # pprint(parse_file('b.txt')['weights'])
-    solve('b.txt', dry_run=True)
+    pprint(parse_file('a.txt')['weights'])
+    # solve('a.txt', dry_run=True)
 
 
 if __name__ == "__main__":
