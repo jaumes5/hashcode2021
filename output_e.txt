@@ -1,235 +1,8 @@
-500
+490
 1
 2
 a-b 4
 ejj-b 1
-499
-225
-dbg-ejj 0
-bic-ejj 0
-he-ejj 0
-big-ejj 0
-cha-ejj 0
-cc-ejj 0
-ci-ejj 0
-bbg-ejj 0
-cie-ejj 0
-ji-ejj 0
-hc-ejj 0
-cii-ejj 0
-ejg-ejj 0
-je-ejj 0
-bfa-ejj 0
-dja-ejj 0
-ee-ejj 0
-ddg-ejj 0
-eac-ejj 0
-eee-ejj 0
-dg-ejj 0
-bhc-ejj 0
-bja-ejj 0
-bba-ejj 0
-cac-ejj 0
-cgg-ejj 0
-dae-ejj 0
-bje-ejj 0
-dhg-ejj 0
-eeg-ejj 0
-bea-ejj 0
-bda-ejj 0
-djc-ejj 0
-egg-ejj 0
-caa-ejj 0
-bc-ejj 0
-ce-ejj 0
-edi-ejj 0
-cjg-ejj 0
-ebg-ejj 0
-di-ejj 0
-bei-ejj 0
-bi-ejj 0
-chg-ejj 0
-eie-ejj 0
-cdg-ejj 0
-dba-ejj 0
-gc-ejj 0
-cci-ejj 0
-ebc-ejj 0
-eca-ejj 0
-fe-ejj 0
-ba-ejj 0
-dge-ejj 0
-ge-ejj 0
-cbg-ejj 0
-edc-ejj 0
-dhe-ejj 0
-bac-ejj 0
-bii-ejj 0
-fc-ejj 0
-dfi-ejj 0
-bde-ejj 0
-ecg-ejj 0
-dhc-ejj 0
-dag-ejj 0
-dga-ejj 0
-e-ejj 0
-dac-ejj 0
-ddi-ejj 0
-eii-ejj 0
-che-ejj 0
-ccg-ejj 0
-i-ejj 0
-bfi-ejj 0
-egi-ejj 0
-eia-ejj 0
-ddc-ejj 0
-ia-ejj 0
-bec-ejj 0
-bcg-ejj 0
-ede-ejj 0
-bgg-ejj 0
-ga-ejj 0
-bai-ejj 0
-edg-ejj 0
-dca-ejj 0
-cje-ejj 0
-dde-ejj 0
-cfa-ejj 0
-cbe-ejj 0
-cfc-ejj 0
-cfi-ejj 0
-daa-ejj 0
-dee-ejj 0
-djg-ejj 0
-efc-ejj 0
-ehe-ejj 0
-ejc-ejj 0
-dc-ejj 0
-fi-ejj 0
-gg-ejj 0
-ha-ejj 0
-bia-ejj 0
-efi-ejj 0
-chc-ejj 0
-hg-ejj 0
-bag-ejj 0
-bie-ejj 0
-ca-ejj 0
-fa-ejj 0
-cge-ejj 0
-dje-ejj 0
-ec-ejj 0
-eg-ejj 0
-eai-ejj 0
-bgi-ejj 0
-eja-ejj 0
-cea-ejj 0
-bhe-ejj 0
-ebe-ejj 0
-eha-ejj 0
-bfg-ejj 0
-cde-ejj 0
-dai-ejj 0
-gi-ejj 0
-cei-ejj 0
-dfg-ejj 0
-bha-ejj 0
-ehc-ejj 0
-eic-ejj 0
-eje-ejj 0
-ege-ejj 0
-cdi-ejj 0
-efe-ejj 0
-cic-ejj 0
-cja-ejj 0
-ceg-ejj 0
-bbc-ejj 0
-die-ejj 0
-bae-ejj 0
-ecc-ejj 0
-ig-ejj 0
-bee-ejj 0
-bga-ejj 0
-eji-ejj 0
-cae-ejj 0
-a-ejj 0
-bdc-ejj 0
-bdi-ejj 0
-cjc-ejj 0
-eei-ejj 0
-ic-ejj 0
-ccc-ejj 0
-dii-ejj 0
-bge-ejj 0
-dea-ejj 0
-dic-ejj 0
-cg-ejj 0
-bjg-ejj 0
-cgi-ejj 0
-dce-ejj 0
-dgi-ejj 0
-baa-ejj 0
-dhi-ejj 0
-cia-ejj 0
-eag-ejj 0
-bhg-ejj 0
-cee-ejj 0
-hi-ejj 0
-dcg-ejj 0
-dei-ejj 0
-dia-ejj 0
-eaa-ejj 0
-jg-ejj 0
-bfc-ejj 0
-ehg-ejj 0
-ja-ejj 0
-eae-ejj 0
-eba-ejj 0
-be-ejj 0
-cji-ejj 0
-dfc-ejj 0
-eea-ejj 0
-de-ejj 0
-chi-ejj 0
-eig-ejj 0
-beg-ejj 0
-bjc-ejj 0
-dig-ejj 0
-dji-ejj 0
-g-ejj 0
-bbe-ejj 0
-bdg-ejj 0
-dha-ejj 0
-ece-ejj 0
-jc-ejj 0
-cig-ejj 0
-cce-ejj 0
-dda-ejj 0
-cgc-ejj 0
-cfg-ejj 0
-ehi-ejj 0
-bcc-ejj 0
-bfe-ejj 0
-bci-ejj 0
-fg-ejj 0
-egc-ejj 0
-eec-ejj 0
-efa-ejj 0
-cda-ejj 0
-cec-ejj 0
-dcc-ejj 0
-bhi-ejj 0
-cca-ejj 0
-ebi-ejj 0
-cdc-ejj 0
-deg-ejj 0
-dci-ejj 0
-eci-ejj 0
-eda-ejj 0
-dec-ejj 0
-ie-ejj 0
-bgc-ejj 0
-cbc-ejj 0
 2
 1
 b-c 676
@@ -408,9 +181,6 @@ ejj-fb 1
 52
 1
 fb-fc 676
-53
-1
-fc-fd 0
 54
 1
 fd-fe 676
@@ -785,9 +555,6 @@ ejj-bfj 1
 160
 1
 bfj-bga 676
-161
-1
-bga-bgb 0
 162
 1
 bgb-bgc 676
@@ -1092,9 +859,6 @@ ejj-ceh 1
 248
 1
 ceh-cei 676
-249
-1
-cei-cej 0
 250
 1
 cej-cfa 676
@@ -1161,9 +925,6 @@ ejj-cgh 1
 268
 1
 cgh-cgi 676
-269
-1
-cgi-cgj 0
 270
 1
 cgj-cha 676
@@ -1230,9 +991,6 @@ ejj-cih 1
 288
 1
 cih-cii 676
-289
-1
-cii-cij 0
 290
 1
 cij-cja 676
@@ -1446,9 +1204,6 @@ ejj-dej 1
 350
 1
 dej-dfa 676
-351
-1
-dfa-dfb 0
 352
 1
 dfb-dfc 676
@@ -1599,9 +1354,6 @@ djc-djd 7
 394
 1
 djd-dje 676
-395
-1
-dje-djf 0
 396
 1
 djf-djg 676
@@ -1787,9 +1539,6 @@ ejj-eeh 1
 448
 1
 eeh-eei 676
-449
-1
-eei-eej 0
 450
 1
 eej-efa 676
@@ -1919,9 +1668,6 @@ eie-eif 5
 486
 1
 eif-eig 676
-487
-1
-eig-eih 0
 488
 1
 eih-eii 676
