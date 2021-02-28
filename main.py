@@ -5,7 +5,7 @@ from pprint import pprint
 from genetic import create_streets
 
 
-def solve(input_file_name, dry_run=False):
+def solve(input_file_name, number_of_generations=20, dry_run=False):
     problem = parse_file(input_file_name)
     # pprint(problem)
     init_state = initial_state(problem["intersections_in"], problem["cars"])
@@ -15,10 +15,10 @@ def solve(input_file_name, dry_run=False):
         problem["intersections_in"],
         int(problem["duration"]),
         problem["streets"],
-        problem["black_list"],
         init_state,
         problem["cars"],
         problem["points"],
+        number_of_generations,
     )
     if not dry_run:
         with open("output_" + input_file_name, "w") as output_file:
@@ -41,11 +41,11 @@ def main():
 
 
 def test_():
-    solve("a.txt")
+    solve("e.txt", number_of_generations=100)
     # pprint(parse_file("a.txt"))
     # solve('a.txt', dry_run=True)
 
 
 if __name__ == "__main__":
-    main()
-    # test_()
+    # main()
+    test_()

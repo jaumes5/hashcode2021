@@ -1,13 +1,14 @@
 import copy
-import bisect
 import random
+import time as time_packet
+
+from utils import get_max_cars, sorted_streets, intersection_parser, find_element
 
 
 def create_streets(
     intersections,
     time,
     streets_dict,
-    blacklist,
     init_state,
     cars,
     points,
@@ -18,6 +19,7 @@ def create_streets(
     best_score = 0
     best_res = ""
     generation_count = 0
+    max_cars = get_max_cars(streets_dict)
     while nb_unsuccessful_generations < number_of_generations:
         res = ""
         inter_count = 0
@@ -28,13 +30,15 @@ def create_streets(
                 inter_count += 1
             else:
                 streets = sorted_streets(inter[1], streets_dict)
+                tmp_streets = streets.copy()
+                random.shuffle(tmp_streets)
                 num_streets = len(inter[1])
                 avail_time = time
                 streets_time = []
-                for i in streets:
+                for i in tmp_streets:
                     if avail_time == 0:
                         break
-                    tmp_time = random.randint(0, avail_time)
+                    tmp_time = random.randint(0, min(max_cars, avail_time))
                     avail_time -= tmp_time
                     if tmp_time != 0:
                         streets_time.append(i + " " + str(tmp_time))
@@ -66,50 +70,25 @@ def create_streets(
     return best_res
 
 
-def sorted_streets(streets, streets_dict):
-    return sorted(
-        streets,
-        key=lambda s: streets_dict[s]["nb_use"] / streets_dict[s]["L"],
-        reverse=True,
-    )
-
-
-def intersection_parser(res_file):
-    file_split = res_file.split("\n")
-    inter_dict = {}
-    line_pos = 1
-    for iter_count in range(int(file_split[0])):
-        inter = int(file_split[line_pos])
-        inter_dict[inter] = []
-        line_pos += 1
-        for street in range(int(file_split[line_pos])):
-            line_pos += 1
-            tmp = file_split[line_pos].split(" ")
-            inter_dict[inter].append([tmp[0], int(tmp[1])])
-        line_pos += 1
-    return inter_dict
-
-
-def find_element(two_d_list: list, element, pos=0):
-    for pos_element, i in enumerate(two_d_list):
-        if i[pos] == element:
-            return pos_element
-    return -1
-
-
+# TODO results are not exact, review documentation
 def calc_score(iterations, initial_state, cars, streets, points, res_file):
     intersection_movements = intersection_parser(res_file)
     actual_street_inter = {i: j[0] for i, j in intersection_movements.items()}
     cars_in_movement = {j: [] for j in initial_state.keys()}
     end_road = []
     score = 0
+    loop_time = [0, 0, 0]
     for i in range(iterations):
+        start = time_packet.time()
         for pos in range(len(end_road) - 1, -1, -1):
             if end_road[pos] - 1 <= 0:
                 score += iterations - i + points
                 end_road.pop(pos)
             else:
                 end_road[pos] -= 1
+        loop_time[0] += time_packet.time() - start
+        start = time_packet.time()
+        # TODO IMPORTANT optimize this loop
         for street in cars_in_movement.keys():
             for car_mov in range(len(cars_in_movement[street]) - 1, -1, -1):
                 if cars_in_movement[street][car_mov][0] - 1 <= 0:
@@ -117,17 +96,26 @@ def calc_score(iterations, initial_state, cars, streets, points, res_file):
                     initial_state[street].append(tmp_car[1])
                 else:
                     cars_in_movement[street][car_mov][0] -= 1
+        loop_time[1] += time_packet.time() - start
+        start = time_packet.time()
+        # TODO optimize this loop
         for inter in actual_street_inter.keys():
             street = actual_street_inter[inter][0]
             if initial_state[street]:
                 car = initial_state[street].pop(0)
                 if cars[car].index(street) + 2 < len(cars[car]):
-                    bisect.insort(
+                    """bisect.insort(
                         cars_in_movement[cars[car][cars[car].index(street) + 1]],
                         [
                             streets[cars[car][cars[car].index(street) + 1]]["L"],
                             car,
                         ],
+                    )"""
+                    cars_in_movement[cars[car][cars[car].index(street) + 1]].append(
+                        [
+                            streets[cars[car][cars[car].index(street) + 1]]["L"],
+                            car,
+                        ]
                     )
                 else:
                     end_road.append(
@@ -139,4 +127,8 @@ def calc_score(iterations, initial_state, cars, streets, points, res_file):
                 actual_street_inter[inter] = tmp[(pos + 1) % len(tmp)]
             else:
                 actual_street_inter[inter][1] -= 1
+        loop_time[2] += time_packet.time() - start
+    for i, j in enumerate(loop_time):
+        # print("Loop {} took {} minutes and {} seconds".format(i, int(j // 60), j % 60))
+        pass
     return score
