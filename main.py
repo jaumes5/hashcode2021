@@ -7,9 +7,10 @@ from genetic import create_streets
 
 def solve(input_file_name, dry_run=False):
     problem = parse_file(input_file_name)
-    pprint(problem)
+    # pprint(problem)
     init_state = initial_state(problem["intersections_in"], problem["cars"])
-    pprint(init_state)
+    # pprint(init_state)
+
     output = create_streets(
         problem["intersections_in"],
         int(problem["duration"]),
@@ -46,5 +47,5 @@ def test_():
 
 
 if __name__ == "__main__":
-    # main()
-    test_()
+    main()
+    # test_()
