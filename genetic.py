@@ -97,7 +97,6 @@ def find_element(two_d_list: list, element, pos=0):
     return -1
 
 
-# TODO use intersection_movements instead of for street, cars_street in initial_state.items
 def calc_score(iterations, initial_state, cars, streets, points, res_file):
     intersection_movements = intersection_parser(res_file)
     actual_street_inter = {i: j[0] for i, j in intersection_movements.items()}
