@@ -44,6 +44,9 @@ def test_():
     solve("e.txt", number_of_generations=100)
     # pprint(parse_file("a.txt"))
     # solve('a.txt', dry_run=True)
+    """for l in "abcdef":
+        print(l)
+        parse_file(l + ".txt")"""
 
 
 if __name__ == "__main__":
